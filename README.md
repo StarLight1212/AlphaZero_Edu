@@ -14,7 +14,6 @@
 ## 项目结构
 
 ```
-AlphaGomoku/
 ├── config.yaml           # 配置文件
 ├── train.py              # 训练脚本
 ├── play.py               # 游戏脚本
@@ -47,8 +46,8 @@ AlphaGomoku/
 1. 克隆仓库:
 
 ```bash
-git clone https://github.com/yourusername/AlphaGomoku.git
-cd AlphaGomoku
+git clone https://github.com/StarLight1212/AlphaZero_Edu
+cd AlphaZero_Edu
 ```
 
 2. 安装依赖:
@@ -77,7 +76,7 @@ python play.py --config config.yaml
 
 - `--model models/best.pt`: 指定要加载的模型文件
 - `--human_first`: 设置人类玩家先手（默认AI先手）
-- `--mcts_sims 400`: 调整MCTS模拟次数（影响AI强度和思考时间）
+- `--mcts_sims 800`: 调整MCTS模拟次数（影响AI强度和思考时间）
 
 ## 配置
 
