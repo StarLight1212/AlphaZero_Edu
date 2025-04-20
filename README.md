@@ -1,4 +1,4 @@
-# AlphaGomoku
+# AlphaZero-Edu
 
 基于AlphaZero算法的五子棋AI，使用自我对弈、深度学习和蒙特卡洛树搜索来训练和玩五子棋。
 
