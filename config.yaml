@@ -1,0 +1,53 @@
+# 训练参数
+training:
+  epochs: 20                     # 每次迭代的训练轮数
+  batch_size: 8192                # 批量大小
+  num_iterations: 200            # 总迭代次数
+  num_episodes: 100              # 每次迭代的自我对弈次数
+  max_queue_length: 200000       # 训练样本队列的最大长度
+  num_iters_history: 20          # 保留的历史迭代数
+  update_threshold: 0.55         # 新模型胜率阈值
+  arena_compare: 40              # 竞技场对比的游戏数
+  temp_threshold: 5             # 温度阈值（前N步使用温度为1的策略）
+
+# 神经网络参数
+network:
+  num_channels: 512              # 卷积通道数
+  dropout: 0.3                   # Dropout率
+  learning_rate:
+    min: 1.0e-4                  # 最小学习率
+    max: 1.0e-2                  # 最大学习率
+  grad_clip: 1.0                 # 梯度裁剪
+  optimizer: 'adam'              # 优化器类型: adam, sgd
+
+# MCTS参数
+mcts:
+  num_sims: 2000                  # MCTS模拟次数
+  cpuct: 4.0                     # PUCT算法中的探索常数
+  dirichlet_alpha: 0.3           # Dirichlet噪声参数
+  dirichlet_epsilon: 0.25        # Dirichlet噪声权重
+
+# 游戏参数
+game:
+  board_size: 9                 # 棋盘大小
+  win_length: 5                  # 获胜所需的连续棋子数
+
+# 系统参数
+system:
+  cuda: true                     # 是否使用CUDA（会被torch.cuda.is_available()覆盖）
+  checkpoint_dir: "./models"     # 检查点目录
+  data_dir: "./data"             # 数据目录
+  load_model: true              # 是否加载模型
+  load_folder_file: ["./models", "best.pt"]  # 加载模型的路径
+  num_workers: 4                 # 数据加载器的工作线程数
+  num_processes: 4               # 自我对弈和评估的进程数
+  use_wandb: false               # 是否使用Weights & Biases进行实验跟踪
+
+# GUI参数
+gui:
+  window_width: 800              # 窗口宽度
+  window_height: 850             # 窗口高度（包括底部控制区域）
+  cell_size: 40                  # 格子大小
+  margin: 40                     # 边距
+  bottom_margin: 80              # 底部边距
+  fps: 30                        # 帧率 
