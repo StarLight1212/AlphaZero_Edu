@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export CUDA_LAUNCH_BLOCKING=0
+export CUDA_VISIBLE_DEVICES=0
+CUDA_VISIBLE_DEVICES=0 python train.py
